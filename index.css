@@ -1,0 +1,51 @@
+:root{
+    --couleur1: #F18F01;
+    --couleur2: #048BA8;
+    --couleur3: #2E4057;
+    --couleur4: #99C24D;
+    --couleur5: #2F2D2E;
+}
+
+body{
+    margin: 0;
+}
+
+/*---------------------------------------------HEADER----------------------------------------------------*/
+header{
+    background-color: var(--couleur3);
+    display: flex;
+    width: auto;
+    height: 99px;
+}
+
+.logo{
+    border-radius: 23%;
+}
+
+.recherche{
+    margin: auto;
+}
+
+.ch_rez{
+    width: 400px;
+}
+
+#recherche{
+    background-color: var(--couleur1);
+    box-sizing: border-box;
+    display: inline-block;
+    float : none;
+    line-height: normal;
+    position: static;
+}
+
+.icons{
+    width: 79px;
+    padding: 0;
+}
+
+.iconsLink{
+    margin: 10px;
+    padding: 0;
+}
+/*----------------------------------------------BODY-----------------------------------------------------*/
