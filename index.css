@@ -1,25 +1,28 @@
 :root{
-    --couleur1: #F18F01;
-    --couleur2: #048BA8;
-    --couleur3: #2E4057;
-    --couleur4: #99C24D;
-    --couleur5: #2F2D2E;
-}
+    --couleur1hex: #F18F01;
+    --couleur2hex: #048BA8;
+    --couleur3hex: #2E4057;
+    --couleur4hex: #99C24D;
+    --couleur5hex: #2F2D2E;
 
-body{
-    margin: 0;
+    --couleur1rgb: 241, 143, 1;
+    --couleur2rgb: 4, 139, 168;
+    --couleur3rgb: 46, 64, 87;
+    --couleur4rgb: 153, 194, 77;
+    --couleur5rgb: 47, 45, 46;
+
 }
 
 /*---------------------------------------------HEADER----------------------------------------------------*/
 header{
-    background-color: var(--couleur3);
+    background: linear-gradient(to right, rgba(var(--couleur5rgb),1), rgba(var(--couleur3rgb), 1));
     display: flex;
     width: auto;
     height: 99px;
 }
 
 .logo{
-    border-radius: 23%;
+    border-radius: 20%;
 }
 
 .recherche{
@@ -27,16 +30,28 @@ header{
 }
 
 .ch_rez{
-    width: 400px;
+    font-size: medium;
+    font-weight: bold;
+    padding-left: 10px;
+    width: 450px;
+    height: 40px;
+    border-radius: 10px;
+    margin-right: 10px;
 }
 
 #recherche{
-    background-color: var(--couleur1);
-    box-sizing: border-box;
-    display: inline-block;
-    float : none;
-    line-height: normal;
-    position: static;
+    font-size: medium;
+    font-weight: bold;
+    width: 120px;
+    height: 40px;
+    border-radius: 25px;
+    background-color: var(--couleur1hex);
+    cursor: pointer;    
+}
+#recherche:hover{
+    color: white;
+    background: var(--couleur2hex);
+    transition: all 0.5s ease-in-out;
 }
 
 .icons{
@@ -48,4 +63,13 @@ header{
     margin: 10px;
     padding: 0;
 }
+.iconsLink:hover{
+	transform: scale(1.25);
+    transition: .45s ease-in-out;
+}
+  
 /*----------------------------------------------BODY-----------------------------------------------------*/
+body{
+    margin: 0;
+    background-color: lightgray;
+}
