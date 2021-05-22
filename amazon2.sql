@@ -32,7 +32,7 @@ CREATE TABLE fixe
 	utilisation TEXT NOT NULL,
 	touchefonction TEXT NOT NULL);
 
-INSERT INTO fixe VALUES('0000002', 'Numérique', 'oui', 'personnel', 'non');
+INSERT INTO fixe VALUES('0000002', 'oui', 'Numérique', 'personnel', 'non');
 
 DROP TABLE IF EXISTS mobile;
 
@@ -45,7 +45,7 @@ CREATE TABLE mobile
 	batterie TEXT NOT NULL,
 	photo TEXT NOT NULL);
 
-INSERT INTO mobile VALUES('0000003', 'non', '64 Go', '4 Go', 'Android', '5000 mAh', '16 Mpx');
+INSERT INTO mobile VALUES('0000003', 'non', '64', '4', 'Android', '5000', '16');
 
 DROP TABLE IF EXISTS stock;
 
@@ -78,11 +78,12 @@ CREATE TABLE commande
 	refarticle TEXT NOT NULL,
 	refclient TEXT NOT NULL,
 	refvendeur TEXT NOT NULL,
-	qte INTEGER NOT NULL);
+	qte INTEGER NOT NULL,
+	terminee TEXT NOT NULL);
 
-INSERT INTO commande VALUES('00001', '0000002', '000001', '001', 4);
-INSERT INTO commande VALUES('00002', '0000001', '000001', '003', 1);
-INSERT INTO commande VALUES('00003', '0000003', '000002', '002', 2);
+INSERT INTO commande VALUES('00001', '0000002', '000001', '001', 4, 'oui');
+INSERT INTO commande VALUES('00002', '0000001', '000001', '003', 1, 'non');
+INSERT INTO commande VALUES('00003', '0000003', '000002', '002', 2, 'oui');
 
 DROP TABLE IF EXISTS client;
 
@@ -93,5 +94,5 @@ CREATE TABLE client
 	addrClient TEXT NULL,
 	mailClient TEXT NOT NULL);
 
-INSERT INTO commande VALUES('Guillaume', '000001', 'azerty', 'mdm', 'guillaume@clemente.fr');
-INSERT INTO commande VALUES('Calixte', '000002', 'password', 'paris', 'calixte.meunier14@gmail.com');
+INSERT INTO client VALUES('Guillaume', '000001', 'azerty', 'mdm', 'guillaume@clemente.fr');
+INSERT INTO client VALUES('Calixte', '000002', 'password', 'vdr', 'calixte.meunier14@gmail.com');
