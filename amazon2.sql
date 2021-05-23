@@ -1,34 +1,34 @@
 BEGIN TRANSACTION;
---! Ajouter les contraintres à la fin des tables
+--!CLEMENTE MEUNIER
 DROP TABLE IF EXISTS article;
 
 CREATE TABLE article
 	(nomarticle TEXT NOT NULL,
-	refarticle TEXT NOT NULL,
+	refarticle TEXT PRIMARY KEY,
 	marque TEXT NOT NULL,
-	prix INTEGER NOT NULL,
+	prix FLOAT NOT NULL,
 	categorie TEXT NOT NULL);
 
-INSERT INTO article VALUES('OXO Connect Large', '00001', 'Alcaltel-Lucent', 1300, 'pabx');
-INSERT INTO article VALUES('OXO Connect Medium', '00002', 'Alcaltel-Lucent', 1000, 'pabx');
-INSERT INTO article VALUES('OXO Connect Small', '00003', 'Alcaltel-Lucent', 660, 'pabx');
-INSERT INTO article VALUES('KX-HTS32', '00004', 'Panasonic', 500, 'pabx');
-INSERT INTO article VALUES('KX-NCP1000BX', '00005', 'Panasonic', 1100, 'pabx');
-INSERT INTO article VALUES('SL1000', '00006', 'NEC', 330, 'pabx');
-INSERT INTO article VALUES('Temporis 180', '00007', 'Alcaltel-Lucent', 15, 'fixe');
+INSERT INTO article VALUES('OXO Connect Large', '00001', 'Alcaltel-Lucent', 1300.00, 'pabx');
+INSERT INTO article VALUES('OXO Connect Medium', '00002', 'Alcaltel-Lucent', 1000.00, 'pabx');
+INSERT INTO article VALUES('OXO Connect Small', '00003', 'Alcaltel-Lucent', 660.66, 'pabx');
+INSERT INTO article VALUES('KX-HTS32', '00004', 'Panasonic', 500.00, 'pabx');
+INSERT INTO article VALUES('KX-NCP1000BX', '00005', 'Panasonic', 1100.99, 'pabx');
+INSERT INTO article VALUES('SL1000', '00006', 'NEC', 330.78, 'pabx');
+INSERT INTO article VALUES('Temporis 180', '00007', 'Alcaltel-Lucent', 15.99, 'fixe');
 INSERT INTO article VALUES('Premium Reflexes 4020', '00008', 'Alcaltel-Lucent', 149, 'fixe');
-INSERT INTO article VALUES('KX-HDV230', '00009', 'Panasonic', 138, 'fixe');
-INSERT INTO article VALUES('KX-TGC210', '00010', 'Panasonic', 25, 'fixe');
-INSERT INTO article VALUES('DA210', '00011', 'Gigaset', 15, 'fixe');
-INSERT INTO article VALUES('Temporis 10 Pro', '00012', 'Alcaltel-Lucent', 12, 'fixe');
-INSERT INTO article VALUES('AS690A', '00013', 'Gigaset', 40, 'fixe');
-INSERT INTO article VALUES('Mi 11 Ultra', '00014', 'Xiaomi', 1199, 'mobile');
-INSERT INTO article VALUES('Redmi Note 10', '00015', 'Xiaomi', 199, 'mobile');
-INSERT INTO article VALUES('IPhone 12', '00016', 'Apple', 1 080, 'mobile');
-INSERT INTO article VALUES('Galaxy S20 FE', '00017', 'Samsung', 599, 'mobile');
-INSERT INTO article VALUES('Galaxy Z Fold2 5G', '00018', 'Samsung', 1799, 'mobile');
-INSERT INTO article VALUES('IPhone SE', '00019', 'Apple', 489, 'mobile');
-INSERT INTO article VALUES('Sunny2', '00020', 'Wiko', 50, 'mobile');
+INSERT INTO article VALUES('KX-HDV230', '00009', 'Panasonic', 138.00, 'fixe');
+INSERT INTO article VALUES('KX-TGC210', '00010', 'Panasonic', 25.00, 'fixe');
+INSERT INTO article VALUES('DA210', '00011', 'Gigaset', 15.52, 'fixe');
+INSERT INTO article VALUES('Temporis 10 Pro', '00012', 'Alcaltel-Lucent', 12.10, 'fixe');
+INSERT INTO article VALUES('AS690A', '00013', 'Gigaset', 40.00, 'fixe');
+INSERT INTO article VALUES('Mi 11 Ultra', '00014', 'Xiaomi', 1199.99, 'mobile');
+INSERT INTO article VALUES('Redmi Note 10', '00015', 'Xiaomi', 199.99, 'mobile');
+INSERT INTO article VALUES('IPhone 12', '00016', 'Apple', 1080.00, 'mobile');
+INSERT INTO article VALUES('Galaxy S20 FE', '00017', 'Samsung', 599.99, 'mobile');
+INSERT INTO article VALUES('Galaxy Z Fold2 5G', '00018', 'Samsung', 1799.99, 'mobile');
+INSERT INTO article VALUES('IPhone SE', '00019', 'Apple', 489.99, 'mobile');
+INSERT INTO article VALUES('Sunny2', '00020', 'Wiko', 50.00, 'mobile');
 
 DROP TABLE IF EXISTS pabx;
 
@@ -38,7 +38,7 @@ CREATE TABLE pabx
 	supportip TEXT NOT NULL,
 	nblignesmax TEXT NOT NULL);
 
-INSERT INTO pabx VALUES('00001', 'oui', 'oui', '138');.
+INSERT INTO pabx VALUES('00001', 'oui', 'oui', '138');
 INSERT INTO pabx VALUES('00002', 'oui', 'oui', '88');
 INSERT INTO pabx VALUES('00003', 'oui', 'oui', '40');
 INSERT INTO pabx VALUES('00004', 'non', 'oui', '8');
@@ -121,7 +121,7 @@ DROP TABLE IF EXISTS vendeur;
 
 CREATE TABLE vendeur
 	(nomvendeur TEXT NOT NULL,
-	refvendeur TEXT NOT NULL,
+	refvendeur TEXT PRIMARY KEY,
 	addrvendeur TEXT NULL,
 	mailvendeur TEXT NOT NULL);
 
@@ -134,12 +134,12 @@ INSERT INTO vendeur VALUES('MaisonDuFutur', '005', 'Lille', 'contact@mdufutur.co
 DROP TABLE IF EXISTS commande;
 
 CREATE TABLE commande
-	(refcommande TEXT NOT NULL,
+	(refcommande TEXT PRIMARY KEY,
 	refarticle TEXT NOT NULL,
 	refclient TEXT NOT NULL,
 	refvendeur TEXT NOT NULL,
 	qte INTEGER NOT NULL,
-	date INTEGER NOT NULL,
+	dateachat date NOT NULL,
 	terminee TEXT NOT NULL);
 
 INSERT INTO commande VALUES('0000001', '00003', '000003', '001', 2, '02/12/2020', 'oui');
@@ -179,7 +179,7 @@ DROP TABLE IF EXISTS client;
 
 CREATE TABLE client
 	(nomclient TEXT NOT NULL,
-	refclient TEXT NOT NULL,
+	refclient TEXT PRIMARY KEY,
 	mdpclient TEXT NOT NULL,
 	addrClient TEXT NULL,
 	mailClient TEXT NOT NULL);
