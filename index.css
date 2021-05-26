@@ -82,6 +82,10 @@ body{
     height: 200px;
     width: auto;
 }
+
+ul{
+    list-style-type: none;
+}
 /*Footer*/
 footer{
     position: fixed;
