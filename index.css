@@ -112,7 +112,7 @@ footer{
 
     .logo{
         width: auto;
-        height: auto;
+        height: 90px;
         display: flex;
         margin-left: 10px;
     }
