@@ -40,7 +40,7 @@ fieldset{
 
 form{
     display: flex;
-    margin-top: 90px;
+    margin-top: 10px;
     flex-direction: column;
     align-items: center;
 }
@@ -71,6 +71,65 @@ input{
     width: 90%;
 }
 
-h2{
+legend{
+    font-size: 20px;
     color: white;
+}
+
+@media screen and (min-width: 1000px) {
+    .logo{
+        width: auto;
+        height: 90px;
+        display: flex;
+        margin-left: 10px;
+    }
+    
+    
+    fieldset{
+        border-radius: 10px;
+        margin-bottom: 5px;
+    }
+    
+    .fmain{
+        border-radius: 10px;
+        background: linear-gradient(to right, rgba(var(--couleur5rgb),1), rgba(var(--couleur3rgb), 1));
+    }
+    
+    form{
+        display: flex;
+        margin-top: 90px;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    p{
+        color: white;
+    }
+    
+    #env{ 
+        margin: auto;
+        display: block;
+        font-size: medium;
+        font-weight: bold;
+        width: 150px;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: var(--couleur1hex);
+        cursor: pointer;
+    }
+    #env:hover{
+        color: white;
+        background: var(--couleur2hex);
+        border-radius: 10px;
+        transition: all 0.5s ease-in-out;
+    }
+    
+    input{
+        width: 90%;
+    }
+    
+    legend{
+        font-size: 20px;
+        color: white;
+    }
 }
