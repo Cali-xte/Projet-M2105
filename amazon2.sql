@@ -9,62 +9,62 @@ CREATE TABLE article
 	prix FLOAT NOT NULL,
 	categorie TEXT NOT NULL);
 
-INSERT INTO article VALUES('OXO Connect Large', '00001', 'Alcaltel-Lucent', 1300.00, 'pabx');
-INSERT INTO article VALUES('OXO Connect Medium', '00002', 'Alcaltel-Lucent', 1000.00, 'pabx');
-INSERT INTO article VALUES('OXO Connect Small', '00003', 'Alcaltel-Lucent', 660.66, 'pabx');
-INSERT INTO article VALUES('KX-HTS32', '00004', 'Panasonic', 500.00, 'pabx');
-INSERT INTO article VALUES('KX-NCP1000BX', '00005', 'Panasonic', 1100.99, 'pabx');
-INSERT INTO article VALUES('SL1000', '00006', 'NEC', 330.78, 'pabx');
-INSERT INTO article VALUES('Temporis 180', '00007', 'Alcaltel-Lucent', 15.99, 'fixe');
-INSERT INTO article VALUES('Premium Reflexes 4020', '00008', 'Alcaltel-Lucent', 149, 'fixe');
-INSERT INTO article VALUES('KX-HDV230', '00009', 'Panasonic', 138.00, 'fixe');
-INSERT INTO article VALUES('KX-TGC210', '00010', 'Panasonic', 25.00, 'fixe');
-INSERT INTO article VALUES('DA210', '00011', 'Gigaset', 15.52, 'fixe');
-INSERT INTO article VALUES('Temporis 10 Pro', '00012', 'Alcaltel-Lucent', 12.10, 'fixe');
-INSERT INTO article VALUES('AS690A', '00013', 'Gigaset', 40.00, 'fixe');
-INSERT INTO article VALUES('Mi 11 Ultra', '00014', 'Xiaomi', 1199.99, 'mobile');
-INSERT INTO article VALUES('Redmi Note 10', '00015', 'Xiaomi', 199.99, 'mobile');
-INSERT INTO article VALUES('IPhone 12', '00016', 'Apple', 1080.00, 'mobile');
-INSERT INTO article VALUES('Galaxy S20 FE', '00017', 'Samsung', 599.99, 'mobile');
-INSERT INTO article VALUES('Galaxy Z Fold2 5G', '00018', 'Samsung', 1799.99, 'mobile');
-INSERT INTO article VALUES('IPhone SE', '00019', 'Apple', 489.99, 'mobile');
-INSERT INTO article VALUES('Sunny2', '00020', 'Wiko', 50.00, 'mobile');
+INSERT INTO article VALUES('OXO Connect Large', '00001', 'Alcaltel-Lucent', 1300.00, 'PABX');
+INSERT INTO article VALUES('OXO Connect Medium', '00002', 'Alcaltel-Lucent', 1000.00, 'PABX');
+INSERT INTO article VALUES('OXO Connect Small', '00003', 'Alcaltel-Lucent', 660.66, 'PABX');
+INSERT INTO article VALUES('KX-HTS32', '00004', 'Panasonic', 500.00, 'PABX');
+INSERT INTO article VALUES('KX-NCP1000BX', '00005', 'Panasonic', 1100.99, 'PABX');
+INSERT INTO article VALUES('SL1000', '00006', 'NEC', 330.78, 'PABX');
+INSERT INTO article VALUES('Temporis 180', '00007', 'Alcaltel-Lucent', 15.99, 'Fixe');
+INSERT INTO article VALUES('Premium Reflexes 4020', '00008', 'Alcaltel-Lucent', 149, 'Fixe');
+INSERT INTO article VALUES('KX-HDV230', '00009', 'Panasonic', 138.00, 'Fixe');
+INSERT INTO article VALUES('KX-TGC210', '00010', 'Panasonic', 25.00, 'Fixe');
+INSERT INTO article VALUES('DA210', '00011', 'Gigaset', 15.52, 'Fixe');
+INSERT INTO article VALUES('Temporis 10 Pro', '00012', 'Alcaltel-Lucent', 12.10, 'Fixe');
+INSERT INTO article VALUES('AS690A', '00013', 'Gigaset', 40.00, 'Fixe');
+INSERT INTO article VALUES('Mi 11 Ultra', '00014', 'Xiaomi', 1199.99, 'Mobile');
+INSERT INTO article VALUES('Redmi Note 10', '00015', 'Xiaomi', 199.99, 'Mobile');
+INSERT INTO article VALUES('IPhone 12', '00016', 'Apple', 1080.00, 'Mobile');
+INSERT INTO article VALUES('Galaxy S20 FE', '00017', 'Samsung', 599.99, 'Mobile');
+INSERT INTO article VALUES('Galaxy Z Fold2 5G', '00018', 'Samsung', 1799.99, 'Mobile');
+INSERT INTO article VALUES('IPhone SE', '00019', 'Apple', 489.99, 'Mobile');
+INSERT INTO article VALUES('Sunny2', '00020', 'Wiko', 50.00, 'Mobile');
 
-DROP TABLE IF EXISTS pabx;
+DROP TABLE IF EXISTS PABX;
 
-CREATE TABLE pabx
+CREATE TABLE PABX
 	(refarticle TEXT NOT NULL,
 	modulable TEXT NOT NULL,
 	supportip TEXT NOT NULL,
 	nblignesmax TEXT NOT NULL);
 
-INSERT INTO pabx VALUES('00001', 'oui', 'oui', '138');
-INSERT INTO pabx VALUES('00002', 'oui', 'oui', '88');
-INSERT INTO pabx VALUES('00003', 'oui', 'oui', '40');
-INSERT INTO pabx VALUES('00004', 'non', 'oui', '8');
-INSERT INTO pabx VALUES('00005', 'oui', 'oui', '128');
-INSERT INTO pabx VALUES('00006', 'oui', 'oui', '128');
+INSERT INTO PABX VALUES('00001', 'oui', 'oui', '138');
+INSERT INTO PABX VALUES('00002', 'oui', 'oui', '88');
+INSERT INTO PABX VALUES('00003', 'oui', 'oui', '40');
+INSERT INTO PABX VALUES('00004', 'non', 'oui', '8');
+INSERT INTO PABX VALUES('00005', 'oui', 'oui', '128');
+INSERT INTO PABX VALUES('00006', 'oui', 'oui', '128');
 
-DROP TABLE IF EXISTS fixe;
+DROP TABLE IF EXISTS Fixe;
 
-CREATE TABLE fixe
+CREATE TABLE Fixe
 	(refarticle TEXT NOT NULL,
 	filaire TEXT NOT NULL,
 	type TEXT NOT NULL,
 	utilisation TEXT NOT NULL,
 	touchefonction TEXT NOT NULL);
 
-INSERT INTO fixe VALUES('00007', 'oui', 'Analogique', 'Entreprise', 'non');
-INSERT INTO fixe VALUES('00008', 'oui', 'Numérique', 'Entreprise', 'oui');
-INSERT INTO fixe VALUES('00009', 'oui', 'Numérique', 'Entreprise', 'oui');
-INSERT INTO fixe VALUES('00010', 'non', 'Numérique', 'Personnel', 'non');
-INSERT INTO fixe VALUES('00011', 'oui', 'Analogique', 'Entreprise', 'non');
-INSERT INTO fixe VALUES('00012', 'oui', 'Analogique', 'Entreprise', 'non');
-INSERT INTO fixe VALUES('00013', 'non', 'Numérique', 'Personnel', 'non');
+INSERT INTO Fixe VALUES('00007', 'oui', 'Analogique', 'Entreprise', 'non');
+INSERT INTO Fixe VALUES('00008', 'oui', 'Numérique', 'Entreprise', 'oui');
+INSERT INTO Fixe VALUES('00009', 'oui', 'Numérique', 'Entreprise', 'oui');
+INSERT INTO Fixe VALUES('00010', 'non', 'Numérique', 'Personnel', 'non');
+INSERT INTO Fixe VALUES('00011', 'oui', 'Analogique', 'Entreprise', 'non');
+INSERT INTO Fixe VALUES('00012', 'oui', 'Analogique', 'Entreprise', 'non');
+INSERT INTO Fixe VALUES('00013', 'non', 'Numérique', 'Personnel', 'non');
 
-DROP TABLE IF EXISTS mobile;
+DROP TABLE IF EXISTS Mobile;
 
-CREATE TABLE mobile
+CREATE TABLE Mobile
 	(refarticle TEXT NOT NULL,
 	cinqg TEXT NOT NULL,
 	stockage TEXT NOT NULL,
@@ -73,13 +73,13 @@ CREATE TABLE mobile
 	batterie TEXT NOT NULL,
 	photo TEXT NOT NULL);
 
-INSERT INTO mobile VALUES('00014', 'oui', '256', '12', 'Android', '5000', '50');
-INSERT INTO mobile VALUES('00015', 'non', '64', '4', 'Android', '5000', '40');
-INSERT INTO mobile VALUES('00016', 'oui', '256', '6', 'iOS', '2815', '12');
-INSERT INTO mobile VALUES('00017', 'non', '128', '6', 'Android', '4500', '12');
-INSERT INTO mobile VALUES('00018', 'oui', '256', '12', 'Android', '4500', '12');
-INSERT INTO mobile VALUES('00019', 'non', '64', '3', 'iOS', '1821', '7');
-INSERT INTO mobile VALUES('00020', 'non', '8', '1', 'Android', '1300', '5');
+INSERT INTO Mobile VALUES('00014', 'oui', '256', '12', 'Android', '5000', '50');
+INSERT INTO Mobile VALUES('00015', 'non', '64', '4', 'Android', '5000', '40');
+INSERT INTO Mobile VALUES('00016', 'oui', '256', '6', 'iOS', '2815', '12');
+INSERT INTO Mobile VALUES('00017', 'non', '128', '6', 'Android', '4500', '12');
+INSERT INTO Mobile VALUES('00018', 'oui', '256', '12', 'Android', '4500', '12');
+INSERT INTO Mobile VALUES('00019', 'non', '64', '3', 'iOS', '1821', '7');
+INSERT INTO Mobile VALUES('00020', 'non', '8', '1', 'Android', '1300', '5');
 
 DROP TABLE IF EXISTS stock;
 
@@ -88,34 +88,34 @@ CREATE TABLE stock
 	qte INTEGER NOT NULL,
 	refvendeur TEXT NOT NULL);
 
-INSERT INTO stock VALUES('00001', 10, 'pabx');
-INSERT INTO stock VALUES('00001', 31, 'pabx');
-INSERT INTO stock VALUES('00002', 25, 'pabx');
-INSERT INTO stock VALUES('00002', 2, 'pabx');
-INSERT INTO stock VALUES('00003', 8, 'pabx');
-INSERT INTO stock VALUES('00003', 4, 'pabx');
-INSERT INTO stock VALUES('00004', 9, 'pabx');
-INSERT INTO stock VALUES('00005', 2, 'pabx');
-INSERT INTO stock VALUES('00006', 3, 'pabx');
-INSERT INTO stock VALUES('00007', 12, 'fixe');
-INSERT INTO stock VALUES('00007', 5, 'fixe');
-INSERT INTO stock VALUES('00008', 1, 'fixe');
-INSERT INTO stock VALUES('00008', 32, 'fixe');
-INSERT INTO stock VALUES('00009', 45, 'fixe');
-INSERT INTO stock VALUES('00010', 15, 'fixe');
-INSERT INTO stock VALUES('00010', 21, 'fixe');
-INSERT INTO stock VALUES('00011', 32, 'fixe');
-INSERT INTO stock VALUES('00012', 58, 'fixe');
-INSERT INTO stock VALUES('00012', 35, 'fixe');
-INSERT INTO stock VALUES('00013', 40, 'fixe');
-INSERT INTO stock VALUES('00013', 19, 'fixe');
-INSERT INTO stock VALUES('00014', 210, 'mobile');
-INSERT INTO stock VALUES('00015', 321, 'mobile');
-INSERT INTO stock VALUES('00016', 121, 'mobile');
-INSERT INTO stock VALUES('00017', 52, 'mobile');
-INSERT INTO stock VALUES('00018', 17, 'mobile');
-INSERT INTO stock VALUES('00019', 207, 'mobile');
-INSERT INTO stock VALUES('00020', 154, 'mobile');
+INSERT INTO stock VALUES('00001', 10, 'PABX');
+INSERT INTO stock VALUES('00001', 31, 'PABX');
+INSERT INTO stock VALUES('00002', 25, 'PABX');
+INSERT INTO stock VALUES('00002', 2, 'PABX');
+INSERT INTO stock VALUES('00003', 8, 'PABX');
+INSERT INTO stock VALUES('00003', 4, 'PABX');
+INSERT INTO stock VALUES('00004', 9, 'PABX');
+INSERT INTO stock VALUES('00005', 2, 'PABX');
+INSERT INTO stock VALUES('00006', 3, 'PABX');
+INSERT INTO stock VALUES('00007', 12, 'Fixe');
+INSERT INTO stock VALUES('00007', 5, 'Fixe');
+INSERT INTO stock VALUES('00008', 1, 'Fixe');
+INSERT INTO stock VALUES('00008', 32, 'Fixe');
+INSERT INTO stock VALUES('00009', 45, 'Fixe');
+INSERT INTO stock VALUES('00010', 15, 'Fixe');
+INSERT INTO stock VALUES('00010', 21, 'Fixe');
+INSERT INTO stock VALUES('00011', 32, 'Fixe');
+INSERT INTO stock VALUES('00012', 58, 'Fixe');
+INSERT INTO stock VALUES('00012', 35, 'Fixe');
+INSERT INTO stock VALUES('00013', 40, 'Fixe');
+INSERT INTO stock VALUES('00013', 19, 'Fixe');
+INSERT INTO stock VALUES('00014', 210, 'Mobile');
+INSERT INTO stock VALUES('00015', 321, 'Mobile');
+INSERT INTO stock VALUES('00016', 121, 'Mobile');
+INSERT INTO stock VALUES('00017', 52, 'Mobile');
+INSERT INTO stock VALUES('00018', 17, 'Mobile');
+INSERT INTO stock VALUES('00019', 207, 'Mobile');
+INSERT INTO stock VALUES('00020', 154, 'Mobile');
 
 DROP TABLE IF EXISTS vendeur;
 
