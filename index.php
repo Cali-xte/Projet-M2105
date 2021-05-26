@@ -13,7 +13,9 @@
 <body>
     <?php
         $db = new SQLite3('amazon2.db');
-        $pabx = $db->query('SELECT * FROM article WHERE categorie = "pabx"');
+        $pabx = $db->query('SELECT nomarticle FROM article WHERE categorie = "PABX"');
+        $fixe = $db->query('SELECT nomarticle FROM article WHERE categorie = "Fixe"');
+        $mobi = $db->query('SELECT nomarticle FROM article WHERE categorie = "Mobile"');
         $cat = $db->query('SELECT DISTINCT categorie FROM article');
         ?>
     <header>
@@ -36,8 +38,34 @@
 
     <ul>
         <?php
-            while ($row = $cat->fetchArray()) {
-                echo "<h1><li>Nos {$row['categorie']}s</li></h1>";
+            while ($list = $cat->fetchArray()) {
+                echo "<h1><li>Nos {$list['categorie']}s</li></h1>";
+                echo "<div class=listeprod>";
+                if ($list['categorie'] == "PABX") {
+                    while ($row = $pabx->fetchArray()) {
+                    echo "<div class = divprod>";
+                    echo "<center><img src='assets/pabxtest.jpeg' alt='produit' class='imgproduit'><br>";
+                    echo "{$row[nomarticle]}</center>";
+                    echo "</div>";
+                    }
+                }
+                if ($list['categorie'] == "Fixe") {
+                    while ($row = $fixe->fetchArray()) {
+                    echo "<div class = divprod>";
+                    echo "<center><img src='assets/fixetest.png' alt='produit' class='imgproduit'><br>";
+                    echo "{$row[nomarticle]}</center>";
+                    echo "</div>";
+                    }
+                }
+                if ($list['categorie'] == "Mobile") {
+                    while ($row = $mobi->fetchArray()) {
+                    echo "<div class = divprod>";
+                    echo "<center><img src='assets/mobiletest.jpg' alt='produit' class='imgproduit'><br>";
+                    echo "{$row[nomarticle]}</center>";
+                    echo "</div>";
+                    }
+                }
+                echo "</div>";
             }
         ?>
     </ul>

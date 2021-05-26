@@ -46,6 +46,18 @@ header{
     height: 25px;
 }
 
+.listeprod{
+    display: flex;
+}
+
+.divprod{
+    width: 6cm;
+}
+
+.imgproduit{
+    width: 5cm;
+}
+
 #recherche{
     display: none;  
 }
