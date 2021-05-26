@@ -84,9 +84,11 @@ body{
 }
 /*Footer*/
 footer{
+    position: absolute;
+    bottom: 0;
+    width:100%;
     background: linear-gradient(to right, rgba(var(--couleur5rgb),1), rgba(var(--couleur3rgb), 1));
     display: flex;
-    width: auto;
     height: auto;
     flex-direction: column;
     justify-content: center;
@@ -186,9 +188,11 @@ footer{
 
     /*Footer*/
     footer{
+        position: absolute;
+        bottom: 0;
+        width:100%;
         background: linear-gradient(to right, rgba(var(--couleur5rgb),1), rgba(var(--couleur3rgb), 1));
         display: flex;
-        width: auto;
         height: 40px;
         justify-content: center;
         flex-direction: row;
