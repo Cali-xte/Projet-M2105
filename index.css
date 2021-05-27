@@ -37,7 +37,6 @@ header{
     border-radius: 10px;
     display: flex;
     align-items: center;
-
 }
 
 .ch_rez{
@@ -46,12 +45,16 @@ header{
     height: 25px;
 }
 
+.main{
+    margin-bottom: 50px;
+}
+
 .listeprod{
     display: flex;
 }
 
 .divprod{
-    width: 6cm;
+    margin: 10px;
 }
 
 .imgproduit{
