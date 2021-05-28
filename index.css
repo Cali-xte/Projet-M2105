@@ -45,22 +45,6 @@ header{
     height: 25px;
 }
 
-.main{
-    margin-bottom: 50px;
-}
-
-.listeprod{
-    display: flex;
-}
-
-.divprod{
-    margin: 10px;
-}
-
-.imgproduit{
-    width: 5cm;
-}
-
 #recherche{
     display: none;  
 }
@@ -101,6 +85,29 @@ body{
 ul{
     list-style-type: none;
 }
+
+.main{
+    margin-bottom: 60px;
+}
+
+.listeprod{
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+
+.divprod{
+    margin: 10px;
+}
+
+.imgproduit{
+    width: 5cm;
+    max-height: 150px;
+    max-width: 200px;
+    width: auto;
+    height: auto;
+}
+
 /*Footer*/
 footer{
     position: fixed;
@@ -108,7 +115,7 @@ footer{
     width:100%;
     background: linear-gradient(to right, rgba(var(--couleur5rgb),1), rgba(var(--couleur3rgb), 1));
     display: flex;
-    height: auto;
+    height: 60px;
     flex-direction: column;
     justify-content: center; 
 }
@@ -204,6 +211,10 @@ footer{
         width: auto;
     }
 
+    .main{
+        margin-bottom: 40px;
+    }
+
     /*Footer*/
     footer{
         position: fixed;
@@ -211,7 +222,7 @@ footer{
         width:100%;
         background: linear-gradient(to right, rgba(var(--couleur5rgb),1), rgba(var(--couleur3rgb), 1));
         display: flex;
-        height: auto;
+        height: 40px;
         justify-content: center;
         flex-direction: row;
     }

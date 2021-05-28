@@ -28,7 +28,7 @@
             </a>
         </form>
         
-        <a href="connexion.html" class="iconsLink">
+        <a href="templates/connexion.html" class="iconsLink">
             <img src="assets/utilisateurs.png" alt="userImage" class="icons">
         </a>
         <a href="assets/archiver.png" class="iconsLink">
@@ -44,24 +44,24 @@
                     if ($list['categorie'] == "PABX") {
                         while ($row = $pabx->fetchArray()) {
                         echo "<div class = divprod>";
-                        echo "<center><img src='assets/pabxtest.jpeg' alt='produit' class='imgproduit'><br>";
-                        echo "{$row[marque]} {$row[nomarticle]}</center>";
+                        echo "<center><img src='assets/produits/{$row[refarticle]}.png' alt='Image non disponible' class='imgproduit'><br>";
+                        echo "<div class='prodtext'>{$row[marque]} {$row[nomarticle]}</div></center>";
                         echo "</div>";
                         }
                     }
                     if ($list['categorie'] == "Fixe") {
                         while ($row = $fixe->fetchArray()) {
                         echo "<div class = divprod>";
-                        echo "<center><img src='assets/fixetest.png' alt='produit' class='imgproduit'><br>";
-                        echo "{$row[marque]} {$row[nomarticle]}</center>";
+                        echo "<center><img src='assets/produits/{$row[refarticle]}.png' alt='Image non disponible' class='imgproduit'><br>";
+                        echo "<div class='prodtext'>{$row[marque]} {$row[nomarticle]}</div></center>";
                         echo "</div>";
                         }
                     }
                     if ($list['categorie'] == "Mobile") {
                         while ($row = $mobi->fetchArray()) {
                         echo "<div class = divprod>";
-                        echo "<center><img src='assets/mobiletest.jpg' alt='produit' class='imgproduit'><br>";
-                        echo "{$row[marque]} {$row[nomarticle]}</center>";
+                        echo "<center><img src='assets/produits/{$row[refarticle]}.png' alt='Image non disponible' class='imgproduit'><br>";
+                        echo "<div class='prodtext'>{$row[marque]} {$row[nomarticle]}</div></center>";
                         echo "</div>";
                         }
                     }
