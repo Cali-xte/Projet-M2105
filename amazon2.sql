@@ -186,9 +186,9 @@ CREATE TABLE client
 
 INSERT INTO client VALUES('Guillaume', '000001', 'azerty', 'Mont-de-Marsan', 'guillaume@clemente.fr');
 INSERT INTO client VALUES('Calixte', '000002', 'password', 'Villefranche de Rouergue', 'calixte.meunier14@gmail.com');
-INSERT INTO client VALUES('Raoul', '000003', 'motdepasse', 'Trappes', 'cool.raoul@orange.fr	');
-INSERT INTO client VALUES('Marcel', '000004', 'enroute', 'Rochefort', 'marceladsl@gmail.com	');
-INSERT INTO client VALUES('René', '000005', '12345678', 'Gap', 'renelataupe@yahoo.fr	');
-INSERT INTO client VALUES('Danielle', '000006', '13audisport', 'Marseille', 'danielle-cpl@gmail.com	');
+INSERT INTO client VALUES('Raoul', '000003', 'motdepasse', 'Trappes', 'cool.raoul@orange.fr');
+INSERT INTO client VALUES('Marcel', '000004', 'enroute', 'Rochefort', 'marceladsl@gmail.com');
+INSERT INTO client VALUES('René', '000005', '12345678', 'Gap', 'renelataupe@yahoo.fr');
+INSERT INTO client VALUES('Danielle', '000006', '13audisport', 'Marseille', 'danielle-cpl@gmail.com');
 
 END TRANSACTION;
