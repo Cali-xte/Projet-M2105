@@ -20,8 +20,8 @@
         ?>
     <header>
         <img src="assets/logo.png" alt="logo de l'entreprise" class="logo">
-        <form action="" method="GET" class="recherche">
-            <input type="text" name="barre_recherche" class="ch_rez">
+        <form action="recherche.php" method="GET" class="recherche">
+            <input type="text" name="motcle" class="ch_rez">
             <input type="button" value="Rechercher" id="recherche">
             <a href="assets/chercher.png" id="mobilButLink">
                 <img src="assets/chercher.png" alt="reserch button" id="mobilBut">
