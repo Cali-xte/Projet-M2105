@@ -9,18 +9,18 @@ CREATE TABLE article
 	prix FLOAT NOT NULL,
 	categorie TEXT NOT NULL);
 
-INSERT INTO article VALUES('OXO Connect Large', '00001', 'Alcaltel-Lucent', 1300.00, 'PABX');
-INSERT INTO article VALUES('OXO Connect Medium', '00002', 'Alcaltel-Lucent', 1000.00, 'PABX');
-INSERT INTO article VALUES('OXO Connect Small', '00003', 'Alcaltel-Lucent', 660.66, 'PABX');
+INSERT INTO article VALUES('OXO Connect Large', '00001', 'Alcatel-Lucent', 1300.00, 'PABX');
+INSERT INTO article VALUES('OXO Connect Medium', '00002', 'Alcatel-Lucent', 1000.00, 'PABX');
+INSERT INTO article VALUES('OXO Connect Small', '00003', 'Alcatel-Lucent', 660.66, 'PABX');
 INSERT INTO article VALUES('KX-HTS32', '00004', 'Panasonic', 500.00, 'PABX');
 INSERT INTO article VALUES('KX-NCP1000BX', '00005', 'Panasonic', 1100.99, 'PABX');
 INSERT INTO article VALUES('SL1000', '00006', 'NEC', 330.78, 'PABX');
-INSERT INTO article VALUES('Temporis 180', '00007', 'Alcaltel-Lucent', 15.99, 'Fixe');
-INSERT INTO article VALUES('Premium Reflexes 4020', '00008', 'Alcaltel-Lucent', 149, 'Fixe');
+INSERT INTO article VALUES('Temporis 180', '00007', 'Alcatel-Lucent', 15.99, 'Fixe');
+INSERT INTO article VALUES('Premium Reflexes 4020', '00008', 'Alcatel-Lucent', 149, 'Fixe');
 INSERT INTO article VALUES('KX-HDV230', '00009', 'Panasonic', 138.00, 'Fixe');
 INSERT INTO article VALUES('KX-TGC210', '00010', 'Panasonic', 25.00, 'Fixe');
 INSERT INTO article VALUES('DA210', '00011', 'Gigaset', 15.52, 'Fixe');
-INSERT INTO article VALUES('Temporis 10 Pro', '00012', 'Alcaltel-Lucent', 12.10, 'Fixe');
+INSERT INTO article VALUES('Temporis 10 Pro', '00012', 'Alcatel-Lucent', 12.10, 'Fixe');
 INSERT INTO article VALUES('AS690A', '00013', 'Gigaset', 40.00, 'Fixe');
 INSERT INTO article VALUES('Mi 11 Ultra', '00014', 'Xiaomi', 1199.99, 'Mobile');
 INSERT INTO article VALUES('Redmi Note 10', '00015', 'Xiaomi', 199.99, 'Mobile');
