@@ -3,7 +3,7 @@
     setcookie("user", $c_value, time() + 7200, "/");
 ?>
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,8 +23,6 @@
         $nemail = $_POST["nemail"];
         $npasswd = $_POST["npasswd"];
         $addr = $_POST["addr"];  
-
-
     ?>
     <form action="" method="post">
         <fieldset class="fmain">
@@ -68,13 +66,18 @@
         </fieldset>
     </form>
         <?php
-            
+            //if ($_COOKIE["user"] != "unkown") {
+            //    $db = new SQLite3('amazon2.db');
+            //    $c_user = $_COOKIE["user"];
+            //    $c_nom= $db->querySingle("SELECT nomclient FROM client WHERE mailclient='$c_user'");
+            //    UserInUseMessage("D&eacute;j&agrave; connect&eacute; sous $c_nom");
+            //}
+
+
             if ($email != '' && $nemail == '') {
                 if (Authentification($email,$passwd) == 0) {
                     UserConnexion($email);
-                }else {
-                    echo "Mauvais mot de passe ou email";
-                }
+                }          
             } elseif ($email == '' && $nemail != '') {
                 if (DoesMailExists($nemail) == 0) {
                     CreateUser($nom,$npasswd,$addr,$nemail);
@@ -85,7 +88,7 @@
                     echo "Mail d&eacute;ja utilis&eacute;";
                 }
             } elseif ($email != '' && $nemail != '') {
-                echo "error";
+                ErrorMessage("Connectez vous ou creez un compte");
             }else{
                 echo "";
             }
@@ -102,11 +105,14 @@
                         if ($testp == 0) {
                             return 0;
                         }else {
+                            ErrorMessage("Le mot de passe est incorrect");
                             return 2;
                         }
                     }
                     
-                }return 1;
+                }
+                ErrorMessage("Votre email nous est inconnu, inscrivez vous !");
+                return 1;
             }
 
             function UserConnexion($user) {
@@ -121,6 +127,7 @@
                     $bddmail = $mails['mailClient'];
                     $testm = strcmp($bddmail, $user);
                     if ($testm == 0) {
+                        ErrorMessage("Le mail saisi est d&eacute;j&agrave; utilis&eacute;");
                         return 1;
                     }            
                 }return 0;
@@ -128,12 +135,12 @@
 
             function CreateUser($name,$mdp,$addr,$mail){
                 $db = new SQLite3('amazon2.db');
-                $ref = RandomRefGen(6);
+                $ref = GenRefClient(6);
                 $querry = "INSERT INTO client(nomclient, refclient, mdpclient, addrClient, mailClient) VALUES ('$name', '$ref', '$mdp', '$addr', '$mail')";
                 $send = $db->exec($querry);
             }
 
-            function RandomRefGen($length){
+            function GenRefClient($length){
                 $chars = '0123456789';
                 $string = '';
                 for($i=0; $i<$length; $i++){
@@ -141,7 +148,20 @@
                 }
                 return $string;
             }
+            
+            function ErrorMessage($message){
+                echo "<div class='parent-message'>";
+                echo    "<p class='error-message'>";
+                echo $message;
+                echo    "</p></div>";
+            }
 
+            function UserInUseMessage($message){
+                echo "<div class='parent-user'>";
+                echo    "<p class='user-message'>";
+                echo $message;
+                echo    "</p></div>";
+            }
         ?>
 </body>
 </html>
