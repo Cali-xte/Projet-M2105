@@ -97,7 +97,7 @@ legend{
     
     form{
         display: flex;
-        margin-top: 90px;
+        margin-top: 15px;
         flex-direction: column;
         align-items: center;
     }
