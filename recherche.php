@@ -18,10 +18,12 @@
         $nbrrech = $db->querySingle("SELECT count(*) FROM article WHERE nomarticle LIKE '%$motcle%' or marque LIKE '%$motcle%' or categorie LIKE '%$motcle%' or refarticle LIKE '%$motcle%'");
         ?>
     <header>
-        <img src="assets/logo.png" alt="logo de l'entreprise" class="logo">
+        <a href="index.php">
+            <img src="assets/logo.png" alt="logo de l'entreprise" class="logo">
+        </a>
         <form action="recherche.php" method="GET" class="recherche">
             <input type="text" name="motcle" class="ch_rez">
-            <input type="button" value="Rechercher" id="recherche">
+            <input type="submit" value="Rechercher" id="recherche">
             <a href="assets/chercher.png" id="mobilButLink">
                 <img src="assets/chercher.png" alt="reserch button" id="mobilBut">
             </a>
