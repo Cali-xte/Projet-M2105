@@ -104,8 +104,8 @@ ul{
 
 .divprod{
     padding: 10px;
-    display: inline-block;
-    vertical-align: middle;
+    display: flex;
+    align-items: center;
     -webkit-transform: perspective(1px) translateZ(0);
     transform: perspective(1px) translateZ(0);
     box-shadow: 0 0 1px rgba(0, 0, 0, 0);
@@ -125,6 +125,11 @@ ul{
     max-width: 200px;
     width: auto;
     height: auto;
+}
+
+.prodtext{
+    display: flex;
+    align-items: flex-end;
 }
 
 /*Footer*/
