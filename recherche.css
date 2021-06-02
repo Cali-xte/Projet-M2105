@@ -129,6 +129,17 @@ ul{
     height: auto;
 }
 
+.prodtext{
+    display: flex;
+    align-items: flex-end;
+    text-align: center;
+    color: black;
+}
+
+a {
+    text-decoration: none;
+}
+
 /*Footer*/
 footer{
     position: fixed;
