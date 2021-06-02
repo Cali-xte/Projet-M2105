@@ -24,9 +24,7 @@
         <form action="recherche.php" method="GET" class="recherche">
             <input type="text" name="motcle" class="ch_rez">
             <input type="submit" value="Rechercher" id="recherche">
-            <a href="assets/chercher.png" id="mobilButLink">
-                <img src="assets/chercher.png" alt="reserch button" id="mobilBut">
-            </a>
+            <input type="image" src="assets/chercher.png" alt="Submit Form" id  ="mobilButLink" />
         </form>
         
         <a href="templates/connexion.html" class="iconsLink">
