@@ -17,6 +17,8 @@
         $fixe = $db->query('SELECT * FROM article WHERE categorie = "Fixe"');
         $mobi = $db->query('SELECT * FROM article WHERE categorie = "Mobile"');
         $cat = $db->query('SELECT DISTINCT categorie FROM article');
+        $c_user = $_COOKIE["user"];
+        $c_nom= $db->querySingle("SELECT nomclient FROM client WHERE mailclient='$c_user'");
         ?>
     <header>
         <img src="assets/logo.png" alt="logo de l'entreprise" class="logo">
@@ -36,6 +38,7 @@
     <div class="main">
         <ul>
             <?php
+                echo "<div id='bienvenue'>Bienvenue, {$c_nom}</div>";
                 while ($list = $cat->fetchArray()) {
                     echo "<h1><li>Nos {$list['categorie']}s</li></h1>";
                     echo "<div class=listeprod>";
