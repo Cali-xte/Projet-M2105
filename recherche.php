@@ -18,13 +18,13 @@
         $nbrrech = $db->querySingle("SELECT count(*) FROM article WHERE nomarticle LIKE '%$motcle%' or marque LIKE '%$motcle%' or categorie LIKE '%$motcle%' or refarticle LIKE '%$motcle%'");
         ?>
     <header>
-        <img src="assets/logo.png" alt="logo de l'entreprise" class="logo">
+        <a href="index.php">
+            <img src="assets/logo.png" alt="logo de l'entreprise" class="logo">
+        </a>
         <form action="recherche.php" method="GET" class="recherche">
             <input type="text" name="motcle" class="ch_rez">
-            <input type="button" value="Rechercher" id="recherche">
-            <a href="assets/chercher.png" id="mobilButLink">
-                <img src="assets/chercher.png" alt="reserch button" id="mobilBut">
-            </a>
+            <input type="submit" value="Rechercher" id="recherche">
+            <input type="image" src="assets/chercher.png" alt="Submit Form" id  ="mobilButLink" />
         </form>
         
         <a href="templates/connexion.html" class="iconsLink">
@@ -38,10 +38,10 @@
             <?php
             echo "<h1>{$nbrrech} résultats pour la recherche \"{$motcle}\" :</h1>";
             while ($row = $rech->fetchArray()) {
-                echo "<div class = divprod>";
+                echo "<a href='produit.php?produit={$row[refarticle]}' class='divprod'>";
                 echo "<center><img src='assets/produits/{$row[refarticle]}.png' alt='Image non disponible' class='imgproduit'><br>";
                 echo "<div class='prodtext'>{$row[marque]} {$row[nomarticle]}</div></center>";
-                echo "</div>";
+                echo "</a>";
             }
             ?>
     </div>

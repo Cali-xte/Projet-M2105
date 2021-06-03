@@ -22,10 +22,8 @@
         <img src="assets/logo.png" alt="logo de l'entreprise" class="logo">
         <form action="recherche.php" method="GET" class="recherche">
             <input type="text" name="motcle" class="ch_rez">
-            <input type="button" value="Rechercher" id="recherche">
-            <a href="assets/chercher.png" id="mobilButLink">
-                <img src="assets/chercher.png" alt="reserch button" id="mobilBut">
-            </a>
+            <input type="submit" value="Rechercher" id="recherche">
+            <input type="image" src="assets/chercher.png" alt="Submit Form" id="mobilBut" />
         </form>
         
         <a href="connexion.php" class="iconsLink">
@@ -43,26 +41,26 @@
                     echo "<div class=listeprod>";
                     if ($list['categorie'] == "PABX") {
                         while ($row = $pabx->fetchArray()) {
-                        echo "<div class = divprod>";
-                        echo "<center><img src='assets/produits/{$row[refarticle]}.png' alt='Image non disponible' class='imgproduit'><br>";
-                        echo "<div class='prodtext'>{$row[marque]} {$row[nomarticle]}</div></center>";
-                        echo "</div>";
+                            echo "<a href='produit.php?produit={$row[refarticle]}' class='divprod'>";
+                            echo "<center><img src='assets/produits/{$row[refarticle]}.png' alt='Image non disponible' class='imgproduit'><br>";
+                            echo "<div class='prodtext'>{$row[marque]} {$row[nomarticle]}</div></center>";
+                            echo "</a>";
                         }
                     }
                     if ($list['categorie'] == "Fixe") {
                         while ($row = $fixe->fetchArray()) {
-                        echo "<div class = divprod>";
-                        echo "<center><img src='assets/produits/{$row[refarticle]}.png' alt='Image non disponible' class='imgproduit'><br>";
-                        echo "<div class='prodtext'>{$row[marque]} {$row[nomarticle]}</div></center>";
-                        echo "</div>";
+                            echo "<a href='produit.php?produit={$row[refarticle]}' class='divprod'>";
+                            echo "<center><img src='assets/produits/{$row[refarticle]}.png' alt='Image non disponible' class='imgproduit'><br>";
+                            echo "<div class='prodtext'>{$row[marque]} {$row[nomarticle]}</div></center>";
+                            echo "</a>";
                         }
                     }
                     if ($list['categorie'] == "Mobile") {
                         while ($row = $mobi->fetchArray()) {
-                        echo "<div class = divprod>";
-                        echo "<center><img src='assets/produits/{$row[refarticle]}.png' alt='Image non disponible' class='imgproduit'><br>";
-                        echo "<div class='prodtext'>{$row[marque]} {$row[nomarticle]}</div></center>";
-                        echo "</div>";
+                            echo "<a href='produit.php?produit={$row[refarticle]}' class='divprod'>";
+                            echo "<center><img src='assets/produits/{$row[refarticle]}.png' alt='Image non disponible' class='imgproduit'><br>";
+                            echo "<div class='prodtext'>{$row[marque]} {$row[nomarticle]}</div></center>";
+                            echo "</a>";
                         }
                     }
                     echo "</div>";

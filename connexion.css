@@ -60,12 +60,6 @@ p{
     background-color: var(--couleur1hex);
     cursor: pointer;
 }
-#env:hover{
-    color: white;
-    background: var(--couleur2hex);
-    border-radius: 10px;
-    transition: all 0.5s ease-in-out;
-}
 
 input{
     width: 90%;
@@ -74,6 +68,36 @@ input{
 legend{
     font-size: 20px;
     color: white;
+}
+
+.parent-message{
+    display: inline-block;
+    background: rgba(255, 0, 0, 0.7);
+    color: white;
+    position: fixed;
+    top: 10px;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.error-message{
+    text-align: center;
+}
+
+.parent-user{
+    display: inline-block;
+    background: rgba(0, 255, 0, 0.7);
+    color: white;
+    position: fixed;
+    top: 10px;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.user-message{
+    text-align: center;
 }
 
 @media screen and (min-width: 1000px) {
@@ -97,7 +121,7 @@ legend{
     
     form{
         display: flex;
-        margin-top: 90px;
+        margin-top: 15px;
         flex-direction: column;
         align-items: center;
     }
@@ -131,5 +155,39 @@ legend{
     legend{
         font-size: 20px;
         color: white;
+    }
+
+    .parent-message{
+        display: inline-block;
+        background: rgba(255, 0, 0, 0.7);
+        color: white;
+        position: fixed;
+        top:auto;
+        bottom: 10px;
+        left: 10px;
+        border-radius: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
+    .error-message{
+        text-align: center;
+    }
+
+    .parent-user{
+        display: inline-block;
+        background: rgba(0, 255, 0, 0.7);
+        color: white;
+        position: fixed;
+        top:auto;
+        bottom: 10px;
+        left: 10px;
+        border-radius: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
+    .user-message{
+        text-align: center;
     }
 }
