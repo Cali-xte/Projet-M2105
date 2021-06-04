@@ -66,14 +66,14 @@
         </fieldset>
     </form>
         <?php
-            if ($_COOKIE["user"] != "unknown") {
-                $db = new SQLite3('amazon2.db');
-                $c_user = $_COOKIE["user"];
-                $c_nom= $db->querySingle("SELECT nomclient FROM client WHERE mailclient='$c_user'");
+
+            $db = new SQLite3('amazon2.db');
+            $c_user = $_COOKIE["user"];
+            $c_nom= $db->querySingle("SELECT nomclient FROM client WHERE mailclient='$c_user'");
+            if ($c_nom!= '') {
                 UserInUseMessage("D&eacute;j&agrave; connect&eacute; sous $c_nom");
             }
-
-
+ 
             if ($email != '' && $nemail == '') {
                 if (Authentification($email,$passwd) == 0) {
                     UserConnexion($email);

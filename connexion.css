@@ -88,7 +88,6 @@ legend{
 .parent-user{
     display: inline-block;
     background: rgba(0, 255, 0, 0.7);
-    color: white;
     position: fixed;
     top: 10px;
     border-radius: 5px;
@@ -98,6 +97,7 @@ legend{
 
 .user-message{
     text-align: center;
+    color: black;
 }
 
 @media screen and (min-width: 1000px) {
