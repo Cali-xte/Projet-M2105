@@ -15,6 +15,9 @@
         $db = new SQLite3('amazon2.db');
         $produit = $_GET['produit'];
         $info = $db->query("SELECT * FROM article WHERE refarticle = '$produit'");
+        $pabx = $db->query("SELECT * FROM PABX WHERE refarticle = '$produit'");
+        $fixe = $db->query("SELECT * FROM Fixe WHERE refarticle = '$produit'");
+        $mobile = $db->query("SELECT * FROM Mobile WHERE refarticle = '$produit'");
     ?>
     <header>
         <img src="assets/logo.png" alt="logo de l'entreprise" class="logo">
@@ -34,12 +37,14 @@
     <div class="main">
         <?php
             while ($data = $info->fetchArray()){
-                echo "<div class='vue'><br>";
+                echo "<div class='vue'>";
                 echo "<h1>{$data[nomarticle]}</h1>";
                 echo "<img class='imgprod' src='assets/produits/{$produit}.png' alt='Image non disponible'>";
                 echo "</div>";
                 echo "<div class='vue'>";
-                echo "<h2>{$data[prix]} &euro;</h2>";
+                echo "<h2>{$data[prix]} &euro;</h2></div>";
+                echo "<div class='vue'>";
+                echo "</div>";
             }
         ?>
     </div>
