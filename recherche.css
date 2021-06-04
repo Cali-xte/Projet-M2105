@@ -159,7 +159,7 @@ footer{
 }
 
 /*Grand Ecran*/
-@media screen and (min-width: 1000px) { 
+@media screen and (min-width: 1070px) { 
 
     /*HEADER*/
     header{

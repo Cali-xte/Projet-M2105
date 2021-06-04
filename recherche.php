@@ -27,7 +27,7 @@
             <input type="image" src="assets/chercher.png" alt="Submit Form" id  ="mobilButLink" />
         </form>
         
-        <a href="templates/connexion.html" class="iconsLink">
+        <a href="connexion.php" class="iconsLink">
             <img src="assets/utilisateurs.png" alt="userImage" class="icons">
         </a>
         <a href="assets/archiver.png" class="iconsLink">
