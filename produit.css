@@ -102,6 +102,23 @@ h1{
     margin-left: 20px;
 }
 
+#ajoutpanier {
+    transition: background .1s ease-in;
+    background-color: var(--couleur1hex);
+    padding: 10px;
+    border-radius: 10px;
+    font-size: medium;
+    font-weight: bold;
+}
+
+#ajoutpanier:hover {
+    background-color: var(--couleur2hex);
+}
+
+#ajoutpanier:active {
+    background-color: var(--couleur4hex);
+}
+
 /*Footer*/
 footer{
     position: fixed;

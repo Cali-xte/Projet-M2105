@@ -43,11 +43,15 @@
                 echo "</div>";
                 echo "<div class='vue'>";
                 echo "<h2>{$data[prix]} &euro;</h2></div>";
-                echo "<div class='vue'>";
-                echo "</div>";
             }
         ?>
+        
+        <div class='vue'>
+            <form action=NULL class='achat' alt='Ajouter au panier'>
+                <input type="button" value="Ajouter au panier" id="ajoutpanier">
+        </div>
     </div>
+
     <footer>
         <p class="foot-talk">Projet M2105</p>
         <p class="foot-talk">CLEMENTE Guillaume - MEUNIER Calixte</p>
