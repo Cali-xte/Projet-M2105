@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="produit.css">
     <link rel="icon" type="image/png" href="assets/logominibleu.png" />
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
     <title>Amazon&sup2; </title>
 </head>
 <body>
@@ -48,8 +47,9 @@
         
         <div class='vue'>
             <form action=NULL class='achat' alt='Ajouter au panier'>
-                <input type="button" value="Ajouter au panier" id="ajoutpanier">
+                <input type="button" value="Ajouter au panier" id="ajoutpanier" onclick="myFunction()">
         </div>
+	<div id="snackbar">Ajouté au panier</div>
     </div>
 
     <footer>
@@ -57,5 +57,12 @@
         <p class="foot-talk">CLEMENTE Guillaume - MEUNIER Calixte</p>
         <p class="foot-talk">2020/2021</p>
     </footer>
+    <script>
+	function myFunction() {
+	var x = document.getElementById("snackbar");
+ 	x.className = "show";
+	setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+	}
+</script>
 </body>
 </html>
