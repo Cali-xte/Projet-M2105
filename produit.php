@@ -48,12 +48,6 @@
                 echo "<div class='vue'>";
             }
         ?>
-        
-        <div class='vue'>
-            <form action=NULL class='achat' alt='Ajouter au panier'>
-                <input type="button" value="Ajouter au panier" id="ajoutpanier">
-            </form>
-        </div>
      
         <div class='vue'>
             <h2>Caract&eacute;ristiques</h2>

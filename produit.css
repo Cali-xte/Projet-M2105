@@ -105,6 +105,7 @@ h2 {
 ul {
     list-style: none;
     padding: 0px;
+}
 
 #snackbar {
   visibility: hidden;
