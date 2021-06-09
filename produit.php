@@ -8,19 +8,21 @@
     <link rel="icon" type="image/png" href="assets/logominibleu.png" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <title>Amazon&sup2; </title>
+    <title>Amazon&sup2;</title>
 </head>
 <body>
     <?php
         $db = new SQLite3('amazon2.db');
         $produit = $_GET['produit'];
         $info = $db->query("SELECT * FROM article WHERE refarticle = '$produit'");
-        $pabx = $db->query("SELECT * FROM PABX WHERE refarticle = '$produit'");
-        $fixe = $db->query("SELECT * FROM Fixe WHERE refarticle = '$produit'");
-        $mobile = $db->query("SELECT * FROM Mobile WHERE refarticle = '$produit'");
+        $cat = $db->querySingle("SELECT categorie FROM article WHERE refarticle = '$produit'");
+        $prod = $db->query("SELECT * FROM $cat WHERE refarticle = '$produit'");
+
     ?>
     <header>
-        <img src="assets/logo.png" alt="logo de l'entreprise" class="logo">
+        <a href="index.php">
+            <img src="assets/logo.png" alt="logo de l'entreprise" class="logo">
+        </a>
         <form action="recherche.php" method="GET" class="recherche">
             <input type="text" name="motcle" class="ch_rez">
             <input type="submit" value="Rechercher" id="recherche">
@@ -38,17 +40,52 @@
         <?php
             while ($data = $info->fetchArray()){
                 echo "<div class='vue'>";
-                echo "<h1>{$data[nomarticle]}</h1>";
+                echo "<h1>{$data['nomarticle']}</h1>";
                 echo "<img class='imgprod' src='assets/produits/{$produit}.png' alt='Image non disponible'>";
                 echo "</div>";
                 echo "<div class='vue'>";
-                echo "<h2>{$data[prix]} &euro;</h2></div>";
+                echo "<h2>{$data['prix']} &euro;</h2></div>";
+                echo "<div class='vue'>";
             }
         ?>
         
         <div class='vue'>
             <form action=NULL class='achat' alt='Ajouter au panier'>
                 <input type="button" value="Ajouter au panier" id="ajoutpanier">
+            </form>
+        </div>
+     
+        <div class='vue'>
+            <h2>Caract&eacute;ristiques</h2>
+            <ul>
+            <?php
+                while ($list = $info->fetchArray()){
+                    while ($spec = $prod->fetchArray()) {
+                        if ($list['categorie'] == 'PABX') {
+                            echo "<h3><li>Modulable : {$spec['modulable']}</li>";
+                            echo "<li>Support de la téléphonie IP : {$spec['supportip']}</li>";
+                            echo "<li>Nombre maximum de lignes téléphoniques (cartes d'extensions comprises) : {$spec['nblignesmax']} lignes</li></h3>";
+                        }
+
+                        if ($list['categorie'] == 'Fixe') {
+                            echo "<h3><li>Filaire : {$spec['filaire']}</li>";
+                            echo "<li>Type : {$spec['type']}</li>";
+                            echo "<li>Destiné à une utilisation {$spec['utilisation']}</li>";
+                            echo "<li>Touches multifonctions : {$spec['touchefonction']}</li></h3>";
+                        }
+                
+                        if ($list['categorie'] == 'Mobile') {
+                            echo "<h3><li>5g disponnible : {$spec['cinqg']}</li>";
+                            echo "<li>Stockage : {$spec['stockage']} Go</li>";
+                            echo "<li>RAM : {$spec['ram']} Go</li>";
+                            echo "<li>OS : {$spec['os']}</li>";
+                            echo "<li>Capacité de la batterie : {$spec['batterie']} mAh</li>";
+                            echo "<li>Capteur photo : {$spec['photo']} Mpx</li></h3>";
+                        }
+                    }
+                }
+            ?>
+            </ul>
         </div>
     </div>
 

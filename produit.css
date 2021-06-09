@@ -73,20 +73,6 @@ header{
     padding: 0;
 }
 
-.vue {
-    display: block;
-    text-align: center;
-}
-
-.imgprod{
-    max-width: 75%;
-    max-height: 300px;
-}
-
-h2 {
-    vertical-align: center;
-}
-
 /*BODY*/
 body{
     margin: 0;
@@ -102,6 +88,30 @@ h1{
     margin-left: 20px;
 }
 
+.vue {
+    display: block;
+    text-align: center;
+}
+
+.imgprod{
+    max-width: 75%;
+    max-height: 300px;
+}
+
+h2 {
+    vertical-align: center;
+}
+
+ul {
+    list-style: none;
+    padding: 0px;
+}
+
+li {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
 #ajoutpanier {
     transition: background .1s ease-in;
     background-color: var(--couleur1hex);
@@ -109,6 +119,7 @@ h1{
     border-radius: 10px;
     font-size: medium;
     font-weight: bold;
+    cursor: pointer;
 }
 
 #ajoutpanier:hover {
