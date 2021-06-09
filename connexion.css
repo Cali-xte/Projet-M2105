@@ -87,7 +87,7 @@ legend{
 
 .parent-user{
     display: inline-block;
-    background: rgba(0, 255, 0, 0.7);
+    background: rgba(119, 224, 27, 0.7);
     position: fixed;
     top: 10px;
     border-radius: 5px;
@@ -176,7 +176,7 @@ legend{
 
     .parent-user{
         display: inline-block;
-        background: rgba(0, 255, 0, 0.7);
+        background: rgba(119, 224, 27, 0.7);
         color: white;
         position: fixed;
         top:auto;

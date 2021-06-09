@@ -86,7 +86,10 @@
                 }
             ?>
             </ul>
+
+                <input type="button" value="Ajouter au panier" id="ajoutpanier" onclick="myFunction()">
         </div>
+	<div id="snackbar">Ajouté au panier</div>
     </div>
 
     <footer>
@@ -94,5 +97,12 @@
         <p class="foot-talk">CLEMENTE Guillaume - MEUNIER Calixte</p>
         <p class="foot-talk">2020/2021</p>
     </footer>
+    <script>
+	function myFunction() {
+	var x = document.getElementById("snackbar");
+ 	x.className = "show";
+	setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+	}
+</script>
 </body>
 </html>
