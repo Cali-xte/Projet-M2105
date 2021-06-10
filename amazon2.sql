@@ -140,40 +140,40 @@ CREATE TABLE commande
 	refvendeur TEXT NOT NULL,
 	qte INTEGER NOT NULL,
 	dateachat date NOT NULL,
-	terminee TEXT NOT NULL);
+	etat TEXT NOT NULL);
 
-INSERT INTO commande VALUES('0000001', '00003', '000003', '001', 2, '02/12/2020', 'oui');
-INSERT INTO commande VALUES('0000002', '00008', '000005', '003', 12, '04/12/2020', 'oui');
-INSERT INTO commande VALUES('0000003', '00014', '000006', '004', 1, '05/12/2020', 'oui');
-INSERT INTO commande VALUES('0000004', '00006', '000001', '003', 3, '07/12/2020', 'oui');
-INSERT INTO commande VALUES('0000005', '00005', '000004', '003', 1, '12/12/2020', 'oui');
-INSERT INTO commande VALUES('0000006', '00011', '000005', '003', 4, '24/12/2020', 'oui');
-INSERT INTO commande VALUES('0000007', '00020', '000003', '004', 10, '27/12/2020', 'oui');
-INSERT INTO commande VALUES('0000008', '00016', '000006', '002', 1, '30/12/2020', 'oui');
-INSERT INTO commande VALUES('0000009', '00010', '000003', '005', 1, '01/01/2021', 'oui');
-INSERT INTO commande VALUES('0000010', '00001', '000004', '001', 1, '02/01/2021', 'oui');
-INSERT INTO commande VALUES('0000011', '00020', '000003', '004', 1, '04/01/2021', 'oui');
-INSERT INTO commande VALUES('0000012', '00018', '000004', '004', 2, '06/01/2021', 'oui');
-INSERT INTO commande VALUES('0000013', '00020', '000006', '004', 1, '11/01/2021', 'oui');
-INSERT INTO commande VALUES('0000014', '00002', '000001', '001', 1, '20/01/2021', 'oui');
-INSERT INTO commande VALUES('0000015', '00017', '000003', '004', 3, '23/01/2021', 'oui');
-INSERT INTO commande VALUES('0000016', '00012', '000003', '003', 2, '15/02/2021', 'oui');
-INSERT INTO commande VALUES('0000017', '00003', '000004', '001', 1, '21/02/2021', 'oui');
-INSERT INTO commande VALUES('0000018', '00014', '000001', '004', 1, '04/03/2021', 'oui');
-INSERT INTO commande VALUES('0000019', '00005', '000006', '003', 1, '20/03/2021', 'oui');
-INSERT INTO commande VALUES('0000020', '00004', '000003', '003', 2, '21/03/2021', 'oui');
-INSERT INTO commande VALUES('0000021', '00014', '000005', '004', 2, '10/04/2021', 'oui');
-INSERT INTO commande VALUES('0000022', '00015', '000001', '004', 1, '12/04/2021', 'oui');
-INSERT INTO commande VALUES('0000023', '00003', '000005', '001', 1, '13/04/2021', 'oui');
-INSERT INTO commande VALUES('0000024', '00008', '000001', '001', 5, '13/04/2021', 'oui');
-INSERT INTO commande VALUES('0000025', '00009', '000005', '003', 3, '17/04/2021', 'oui');
-INSERT INTO commande VALUES('0000026', '00016', '000004', '002', 1, '01/05/2021', 'oui');
-INSERT INTO commande VALUES('0000027', '00007', '000004', '001', 20, '08/05/2021', 'oui');
-INSERT INTO commande VALUES('0000028', '00020', '000001', '004', 1, '10/05/2021', 'oui');
-INSERT INTO commande VALUES('0000029', '00017', '000001', '004', 1, '16/05/2021', 'oui');
-INSERT INTO commande VALUES('0000030', '00006', '000003', '003', 1, '17/05/2021', 'non');
-INSERT INTO commande VALUES('0000031', '00019', '000006', '002', 1, '22/05/2021', 'non');
-INSERT INTO commande VALUES('0000032', '00013', '000003', '004', 1, '23/05/2021', 'non');
+INSERT INTO commande VALUES('0000001', '00003', '000003', '001', 2, '02/12/2020', 'Terminée');
+INSERT INTO commande VALUES('0000002', '00008', '000005', '003', 12, '04/12/2020', 'Terminée');
+INSERT INTO commande VALUES('0000003', '00014', '000006', '004', 1, '05/12/2020', 'Terminée');
+INSERT INTO commande VALUES('0000004', '00006', '000001', '003', 3, '07/12/2020', 'Terminée');
+INSERT INTO commande VALUES('0000005', '00005', '000004', '003', 1, '12/12/2020', 'Terminée');
+INSERT INTO commande VALUES('0000006', '00011', '000005', '003', 4, '24/12/2020', 'Terminée');
+INSERT INTO commande VALUES('0000007', '00020', '000003', '004', 10, '27/12/2020', 'Terminée');
+INSERT INTO commande VALUES('0000008', '00016', '000006', '002', 1, '30/12/2020', 'Terminée');
+INSERT INTO commande VALUES('0000009', '00010', '000003', '005', 1, '01/01/2021', 'Terminée');
+INSERT INTO commande VALUES('0000010', '00001', '000004', '001', 1, '02/01/2021', 'Terminée');
+INSERT INTO commande VALUES('0000011', '00020', '000003', '004', 1, '04/01/2021', 'Terminée');
+INSERT INTO commande VALUES('0000012', '00018', '000004', '004', 2, '06/01/2021', 'Terminée');
+INSERT INTO commande VALUES('0000013', '00020', '000006', '004', 1, '11/01/2021', 'Terminée');
+INSERT INTO commande VALUES('0000014', '00002', '000001', '001', 1, '20/01/2021', 'Terminée');
+INSERT INTO commande VALUES('0000015', '00017', '000003', '004', 3, '23/01/2021', 'Terminée');
+INSERT INTO commande VALUES('0000016', '00012', '000003', '003', 2, '15/02/2021', 'Terminée');
+INSERT INTO commande VALUES('0000017', '00003', '000004', '001', 1, '21/02/2021', 'Terminée');
+INSERT INTO commande VALUES('0000018', '00014', '000001', '004', 1, '04/03/2021', 'Terminée');
+INSERT INTO commande VALUES('0000019', '00005', '000006', '003', 1, '20/03/2021', 'Terminée');
+INSERT INTO commande VALUES('0000020', '00004', '000003', '003', 2, '21/03/2021', 'Terminée');
+INSERT INTO commande VALUES('0000021', '00014', '000005', '004', 2, '10/04/2021', 'Terminée');
+INSERT INTO commande VALUES('0000022', '00015', '000001', '004', 1, '12/04/2021', 'Terminée');
+INSERT INTO commande VALUES('0000023', '00003', '000005', '001', 1, '13/04/2021', 'Terminée');
+INSERT INTO commande VALUES('0000024', '00008', '000001', '001', 5, '13/04/2021', 'Terminée');
+INSERT INTO commande VALUES('0000025', '00009', '000005', '003', 3, '17/04/2021', 'Terminée');
+INSERT INTO commande VALUES('0000026', '00016', '000004', '002', 1, '01/05/2021', 'Terminée');
+INSERT INTO commande VALUES('0000027', '00007', '000004', '001', 20, '08/05/2021', 'Terminée');
+INSERT INTO commande VALUES('0000028', '00020', '000001', '004', 1, '10/05/2021', 'Terminée');
+INSERT INTO commande VALUES('0000029', '00017', '000001', '004', 1, '16/05/2021', 'Terminée');
+INSERT INTO commande VALUES('0000030', '00006', '000003', '003', 1, '17/05/2021', 'En cours');
+INSERT INTO commande VALUES('0000031', '00019', '000006', '002', 1, '22/05/2021', 'En cours');
+INSERT INTO commande VALUES('0000032', '00013', '000003', '004', 1, '23/05/2021', 'Panier');
 
 DROP TABLE IF EXISTS client;
 
