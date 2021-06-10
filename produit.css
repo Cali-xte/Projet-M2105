@@ -91,6 +91,7 @@ h1{
 .vue {
     display: block;
     text-align: center;
+    margin-bottom: 10px;
 }
 
 .imgprod{
@@ -155,16 +156,27 @@ body{
     background-color: lightgray;
 }
 
+h3 {
+    margin-bottom: 10px;
+}
+
+ul {
+    margin-bottom: 10px;
+}
+
 li {
     padding-top: 5px;
     padding-bottom: 5px;
+}
+
+i {
+    color: var(--couleur5hex);
 }
 
 #ajoutpanier {
     transition: background .1s ease-in;
     background-color: var(--couleur1hex);
     padding: 10px;
-    margin-top: 20px;
     margin-bottom: 20px;
     border-radius: 10px;
     font-size: medium;

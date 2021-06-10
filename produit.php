@@ -17,6 +17,8 @@
         $info = $db->query("SELECT * FROM article WHERE refarticle = '$produit'");
         $cat = $db->querySingle("SELECT categorie FROM article WHERE refarticle = '$produit'");
         $prod = $db->query("SELECT * FROM $cat WHERE refarticle = '$produit'");
+        $qte = $db->querySingle("SELECT qte FROM stock WHERE refarticle = '$produit'");
+        $vendeur =  $db->query("SELECT * FROM vendeur WHERE refvendeur IN (SELECT refvendeur FROM stock WHERE refarticle = '$produit')");
 
     ?>
     <header>
@@ -80,8 +82,20 @@
                 }
             ?>
             </ul>
+            <?php
+                echo "<div class='vue'><i>Vendu par :";
+                while ($vend = $vendeur->fetchArray()) {
+                    echo "<br>{$vend['nomvendeur']}";
+                }
+                echo "</i></div>";
+                echo "<div class='vue'>{$qte} en stock</div>";
+            ?>
+            <input type="button" value="Ajouter au panier" id="ajoutpanier" onclick="myFunction()">
 
-                <input type="button" value="Ajouter au panier" id="ajoutpanier" onclick="myFunction()">
+            <?php
+                
+            ?>
+
         </div>
 	<div id="snackbar">Ajouté au panier</div>
     </div>
