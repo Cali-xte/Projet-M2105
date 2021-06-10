@@ -164,7 +164,8 @@ li {
     transition: background .1s ease-in;
     background-color: var(--couleur1hex);
     padding: 10px;
-    margin-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     border-radius: 10px;
     font-size: medium;
     font-weight: bold;
