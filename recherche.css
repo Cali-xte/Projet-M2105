@@ -100,14 +100,15 @@ ul{
 
 .listeprod{
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     overflow-x: auto;
 }
 
 .divprod{
     padding: 10px;
-    display: inline-block;
-    vertical-align: middle;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
     -webkit-transform: perspective(1px) translateZ(0);
     transform: perspective(1px) translateZ(0);
     box-shadow: 0 0 1px rgba(0, 0, 0, 0);
@@ -130,8 +131,6 @@ ul{
 }
 
 .prodtext{
-    display: flex;
-    align-items: flex-end;
     text-align: center;
     color: black;
 }

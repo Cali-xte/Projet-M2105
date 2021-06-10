@@ -37,12 +37,14 @@
     <div class="main">
             <?php
             echo "<h1>{$nbrrech} résultats pour la recherche \"{$motcle}\" :</h1>";
+            echo "<div class=listeprod>";
             while ($row = $rech->fetchArray()) {
                 echo "<a href='produit.php?produit={$row[refarticle]}' class='divprod'>";
                 echo "<center><img src='assets/produits/{$row[refarticle]}.png' alt='Image non disponible' class='imgproduit'><br>";
                 echo "<div class='prodtext'>{$row[marque]} {$row[nomarticle]}</div></center>";
                 echo "</a>";
             }
+            echo "</div>";
             ?>
     </div>
     <footer>
