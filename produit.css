@@ -88,6 +88,29 @@ h1{
     margin-left: 20px;
 }
 
+h2 {
+    vertical-align: center;
+}
+
+h3 {
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style: none;
+    padding: 0px;
+    margin-bottom: 10px;
+}
+
+li {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+i {
+    color: var(--couleur5hex);
+}
+
 .vue {
     display: block;
     text-align: center;
@@ -99,13 +122,23 @@ h1{
     max-height: 300px;
 }
 
-h2 {
-    vertical-align: center;
+#ajoutpanier {
+    transition: background .1s ease-in;
+    background-color: var(--couleur1hex);
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    font-size: medium;
+    font-weight: bold;
+    cursor: pointer;
 }
 
-ul {
-    list-style: none;
-    padding: 0px;
+#ajoutpanier:hover {
+    background-color: var(--couleur2hex);
+}
+
+#ajoutpanier:active {
+    background-color: var(--couleur4hex);
 }
 
 #snackbar {
@@ -148,48 +181,6 @@ ul {
 @keyframes fadeout {
   from {bottom: 150px; opacity: 1;}
   to {bottom: 0; opacity: 0;}
-}
-
-/*BODY*/
-body{
-    margin: 0;
-    background-color: lightgray;
-}
-
-h3 {
-    margin-bottom: 10px;
-}
-
-ul {
-    margin-bottom: 10px;
-}
-
-li {
-    padding-top: 5px;
-    padding-bottom: 5px;
-}
-
-i {
-    color: var(--couleur5hex);
-}
-
-#ajoutpanier {
-    transition: background .1s ease-in;
-    background-color: var(--couleur1hex);
-    padding: 10px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    font-size: medium;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-#ajoutpanier:hover {
-    background-color: var(--couleur2hex);
-}
-
-#ajoutpanier:active {
-    background-color: var(--couleur4hex);
 }
 
 /*Footer*/
