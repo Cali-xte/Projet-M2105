@@ -28,10 +28,10 @@
             <input type="image" src="assets/chercher.png" alt="Submit Form" id="mobilBut" />
         </form>
         
-        <a href="" class="iconsLink">
+        <a href="connexion.php class="iconsLink">
             <img src="assets/utilisateurs.png" alt="userImage" class="icons">
         </a>
-        <a href="assets/archiver.png" class="iconsLink">
+        <a href="" class="iconsLink">
             <img src="assets/archiver.png" alt="panier" class="icons">
         </a>
     </header>
