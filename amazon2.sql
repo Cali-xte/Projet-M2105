@@ -190,5 +190,6 @@ INSERT INTO client VALUES('Raoul', '000003', 'motdepasse', 'Trappes', 'cool.raou
 INSERT INTO client VALUES('Marcel', '000004', 'enroute', 'Rochefort', 'marceladsl@gmail.com');
 INSERT INTO client VALUES('René', '000005', '12345678', 'Gap', 'renelataupe@yahoo.fr');
 INSERT INTO client VALUES('Danielle', '000006', '13audisport', 'Marseille', 'danielle-cpl@gmail.com');
+INSERT INTO client VALUES('Administrateur', '000007', 'admin', 'Administration', 'admin@admin.rt');
 
 END TRANSACTION;
