@@ -34,7 +34,7 @@
         <a href="connexion.php" class="iconsLink">
             <img src="assets/utilisateurs.png" alt="userImage" class="icons">
         </a>
-        <a href="assets/archiver.png" class="iconsLink">
+        <a href="panier.php" class="iconsLink">
             <img src="assets/archiver.png" alt="panier" class="icons">
         </a>
     </header>
