@@ -90,10 +90,10 @@
                 echo "</i></div>";
                 echo "<div class='vue'>{$qte} en stock</div>";
             ?>
-            <input type="button" value="Ajouter au panier" id="ajoutpanier" onclick="myFunction()">
-
+            
+            
             <?php
-                
+                echo "<a href='complete.php?produit=$produit' method='get'><input type='submit' value='Ajouter au panier' id='ajoutpanier' onclick='myFunction()'></a>";
             ?>
 
         </div>
