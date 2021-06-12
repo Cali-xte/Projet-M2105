@@ -43,7 +43,7 @@
             header('Location: index.php');
             exit();
     }?>
-    <div class='main'><h1>Bienvenue, <?php{$c_nom}?></h1>
+    <div class='main'><h1>Bienvenue, <?php{$c_nom}?></h1> <!-- PB -->
 
         <button onclick="affprod()">Produits</button>
         <button onclick="affstock()">Stock</button>
@@ -55,7 +55,7 @@
             echo "<tr class='titre'><td>nomarticle</td><td>refarticle</td><td>marque</td><td>prix</td><td>categorie</td></tr>";
             while ($listprod = $produits->fetchArray()) {
                 echo "<tr><td>{$listprod['nomarticle']}</td><td>{$listprod['refarticle']}</td><td>{$listprod['marque']}</td><td>{$listprod['prix']}</td><td>{$listprod['categorie']}</td>";
-                echo "<td><a href='modbdd.php?type=produit&ref={$listprod['refarticle']}'><input type='button' value='X' id='del'></a></td></tr>";
+                echo "<td><a href='modbdd.php?action=suppr&type=produit&ref={$listprod['refarticle']}'><input type='button' value='X' id='del'></a></td></tr>";
             }
             ?></table>
         </div>
@@ -65,7 +65,7 @@
             echo "<tr class='titre'><td>refarticle</td><td>qte</td><td>refvendeur</td></tr>";
             while ($liststock = $stock->fetchArray()) {
                 echo "<tr><td>{$liststock['refarticle']}</td><td>{$liststock['qte']}</td><td>{$liststock['refvendeur']}</td>";
-                echo "<td><a href='modbdd.php?type=stock&ref={$liststock['refarticle']}&vendeur={$liststock['refvendeur']}'><input type='button' value='X' id='del'></a></td></tr>";
+                echo "<td><a href='modbdd.php?action=suppr&type=stock&ref={$liststock['refarticle']}&vendeur={$liststock['refvendeur']}'><input type='button' value='X' id='del'></a></td></tr>";
             }
             ?></table>
         </div>
@@ -75,7 +75,7 @@
             echo "<tr class='titre'><td>nomclient</td><td>refclient</td><td>addrclient</td><td>mailclient</td></tr>";
             while ($listclient = $utilisateurs->fetchArray()) {
                 echo "<tr><td>{$listclient['nomclient']}</td><td>{$listclient['refclient']}</td><td>{$listclient['addrClient']}</td><td>{$listclient['mailClient']}</td>";
-                echo "<td><a href='modbdd.php?type=client&ref={$listclient['refclient']}'><input type='button' value='X' id='del'></a></td></tr>";
+                echo "<td><a href='modbdd.php?action=suppr&type=client&ref={$listclient['refclient']}'><input type='button' value='X' id='del'></a></td></tr>";
             }
             ?></table>
         </div>
@@ -85,7 +85,7 @@
             echo "<tr class='titre'><td>nomvendeur</td><td>refvendeur</td><td>addrvendeur</td><td>mailvendeur</td></tr>";
             while ($listvendeur = $vendeurs->fetchArray()) {
                 echo "<tr><td>{$listvendeur['nomvendeur']}</td><td>{$listvendeur['refvendeur']}</td><td>{$listvendeur['addrvendeur']}</td><td>{$listvendeur['mailvendeur']}</td>";
-                echo "<td><a href='modbdd.php?type=vendeur&ref={$listvendeur['refvendeur']}'><input type='button' value='X' id='del'></a></td></tr>";
+                echo "<td><a href='modbdd.php?action=suppr&type=vendeur&ref={$listvendeur['refvendeur']}'><input type='button' value='X' id='del'></a></td></tr>";
             }
             ?></table>
         </div>
