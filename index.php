@@ -21,7 +21,10 @@
         $c_nom= $db->querySingle("SELECT nomclient FROM client WHERE mailclient='$c_user'");
         ?>
     <header>
-        <img src="assets/logo.png" alt="logo de l'entreprise" class="logo">
+        <a href="admin.php">
+            <img src="assets/logo.png" alt="logo de l'entreprise" class="logo">
+        </a>
+        
         <form action="recherche.php" method="GET" class="recherche">
             <input type="text" name="motcle" class="ch_rez">
             <input type="submit" value="Rechercher" id="recherche">
