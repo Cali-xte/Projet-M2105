@@ -118,6 +118,11 @@ td {
     border-width: 1px
 }
 
+#clean {
+    background-color: red;
+    color: lightgray;
+}
+
 /*Footer*/
 footer{
     position: fixed;
