@@ -91,16 +91,21 @@
             
         </div>
 
-        <div class='cat' id='clients' style="display:none">     <!-- Tableau de contrôle des clients -->
+        <div class='cat' id='clients' style="display:none">                 <!-- Tableau de contrôle des clients -->
             <table><?php
             echo "<tr class='titre'><td>nomclient</td><td>refclient</td><td>addrclient</td><td>mailclient</td><td>mdpclient</td></tr>";     // En-têtes de colonnes
-            while ($listclient = $utilisateurs->fetchArray()) {     // Pour chaque utilisateur
+            while ($listclient = $utilisateurs->fetchArray()) {             // Pour chaque utilisateur
                 // On crée une ligne (le mot de passe ne sort pas du serveur) :
                 echo "<tr><td>{$listclient['nomclient']}</td><td>{$listclient['refclient']}</td><td>{$listclient['addrClient']}</td><td>{$listclient['mailClient']}</td><td>**************</td>";
-                echo "<td><form action='modbdd.php' method='post'>";    // Formulaire de suppression de la ligne
-                echo "<button type='submit' name='action' value='suppr' class='rm'>X</button>";     // Bouton de suppression de la ligne
-                echo "<input type='hidden' name='type' value='client'/><input type='hidden' name='ref' value='{$listclient['refclient']}'/>";   // Paramètres POST de suppression
-                echo "</form></td></tr>";
+                if ($listclient['refclient'] != '0000007') {                // Si l'utilisateur n'est pas l'admin
+                    echo "<td><form action='modbdd.php' method='post'>";    // Formulaire de suppression de la ligne
+                    echo "<button type='submit' name='action' value='suppr' class='rm'>X</button>";     // Bouton de suppression de la ligne
+                    echo "<input type='hidden' name='type' value='client'/><input type='hidden' name='ref' value='{$listclient['refclient']}'/>";   // Paramètres POST de suppression
+                    echo "</form>";
+                } else {                                                    // Si l'utilisateur est l'admin
+                    echo "<td><button type='button' disabled>X</button>";    // On crée un faux bouton, non cliquable
+                }
+                echo "</td></tr>";
             }
 
             echo "<tr><form action='modbdd.php' method='post' class='form'>";               // Formulaire d'ajout d'un client
