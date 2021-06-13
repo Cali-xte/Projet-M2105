@@ -3,14 +3,23 @@
     $c_user = $_COOKIE["user"];
     $c_nom= $db->querySingle("SELECT nomclient FROM client WHERE mailclient='$c_user'");
     $refclient= $db->querySingle("SELECT refclient FROM client WHERE mailclient='$c_user'");
-    
+    $prod = $_GET['produit'];
+    $exist = $db->querySingle("SELECT refcommande FROM commande WHERE etat='Panier' AND refclient='$refclient' AND refarticle='$prod'");
+
     if ($c_nom != "") {
-        $prod = $_GET['produit'];
-        $date = date("d/m/Y");
-        $vendeur = $db->querySingle("SELECT refvendeur FROM Stock WHERE refarticle='$prod'");
-        CreateCommande($prod,$refclient,$vendeur,$date);
-        header('Location: ..');
-        
+
+        if ($exist != "") {
+            $qte = $db->querySingle("SELECT qte FROM commande WHERE refcommande='$exist'");
+            $nqte = $qte + 1;
+            $update = "UPDATE commande SET qte='$nqte' WHERE refcommande='$exist'";
+            $exe = $db->exec($update);
+            header('Location: ..');
+        }else {
+            $date = date("d/m/Y");
+            $vendeur = $db->querySingle("SELECT refvendeur FROM Stock WHERE refarticle='$prod'");
+            CreateCommande($prod,$refclient,$vendeur,$date);
+            header('Location: ..');
+        }  
     }else{
         header('Location: /connexion.php');
     }

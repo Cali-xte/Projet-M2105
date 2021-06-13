@@ -16,6 +16,7 @@
     $c_nom= $db->querySingle("SELECT nomclient FROM client WHERE mailclient='$c_user'");
     $nbarticle = $db->querySingle("SELECT count(*) FROM commande WHERE refclient=(SELECT refclient FROM client WHERE mailClient='$c_user') AND etat='Panier' ");
     $article = $db->query("SELECT * FROM article WHERE refarticle IN(SELECT refarticle FROM commande WHERE refclient=(SELECT refclient FROM client WHERE mailClient='$c_user') AND etat='Panier') ");
+    $refclient= $db->querySingle("SELECT refclient FROM client WHERE mailclient='$c_user'");
 ?>
 <body>
     <header>
@@ -42,19 +43,23 @@
             $totalht = 0;
             echo "<div class='parent'>";
             echo "<h1>Panier de $c_nom</h1>";
-            echo "<p>Article dans le panier : $nbarticle</p>";
+            $articletot = 0;
             while ($row = $article->fetchArray()) {
                 echo "<div class='child'>";
                 echo "<img src='assets/produits/{$row[refarticle]}.png' alt='Image Produit' class='imgproduit'>";
                 echo "<div class='prodNom'>{$row[marque]} {$row[nomarticle]}</div>";
+                $qte = $db->querySingle("SELECT qte FROM commande WHERE refarticle='$row[refarticle]' AND refclient='$refclient'");
+                echo "Qte : x$qte";
                 echo "<div class='prodPrix'>{$row[prix]} €</div>";
                 echo "</div>";
-                $totalht += $row['prix'];
+                $articletot += $qte;
+                $totalht += ($row['prix']*$qte);
             }
             $tva = $totalht*0.20;
             $total = $totalht + $tva;
             //echo "Prix HT : $totalht €<br>";
             //echo "TVA : $tva €<br>";
+            echo "<p>Article dans le panier : $articletot</p>";
             echo "<p class='total'>Total (TVA comprise) : $total €<br><br></p>";
             echo "<div class='decision' action='clearPanier.php'><input type='button' value='Acheter' id='buy'>";
             echo "<a href='clearPanier.php'><input type='button' value='Vider Panier' id='clear' ></a></div>";
