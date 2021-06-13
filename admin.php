@@ -57,7 +57,12 @@
             while ($liststock = $stock->fetchArray()) {                                                                             // Pour chaque ligne de la table Stock
                 echo "<tr><td>{$liststock['refarticle']}</td><td>{$liststock['qte']}</td><td>{$liststock['refvendeur']}</td>";      // On crée une ligne dans le tableau avec ses valeurs
                 echo "<td><form action='modbdd.php' method='post'>";
-                echo "<button type='submit' name='action' value='suppr' class='rm'>X</button>";                                     // Bouton de suppression de la ligne
+                if ($liststock['qte'] > 0) {    // S'il reste au moins 1 article dans la ligne
+                    echo "<button type='submit' name='action' value='suppr' class='rm'>X</button>";                                 // Bouton de suppression de la ligne
+                }
+                else {  // Sinon
+                    echo "<button type='submit' name='action' value='suppr' class='clean'>X</button>";                                 // Bouton rouge (ligne à supprimer au plus vite)
+                }
                 // On fait passer les paramètres manquant par POST grâce à des champs de formulaire invisibles :
                 echo "<input type='hidden' name='type' value='stock'/><input type='hidden' name='ref' value='{$liststock['refarticle']}'/><input type='hidden' name='refvendeur' value='{$liststock['refvendeur']}'/>";
                 echo "</form></td></tr>";
