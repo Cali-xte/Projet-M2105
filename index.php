@@ -12,13 +12,13 @@
 </head>
 <body>
     <?php
-        $db = new SQLite3('amazon2.db');
+        $db = new SQLite3('amazon2.db');    // Lie la base de données
         $pabx = $db->query('SELECT * FROM article WHERE categorie = "PABX"');
         $fixe = $db->query('SELECT * FROM article WHERE categorie = "Fixe"');
         $mobi = $db->query('SELECT * FROM article WHERE categorie = "Mobile"');
         $cat = $db->query('SELECT DISTINCT categorie FROM article');
-        $c_user = $_COOKIE["user"];
-        $c_nom= $db->querySingle("SELECT nomclient FROM client WHERE mailclient='$c_user'");
+        $c_user = $_COOKIE["user"];         // Récupère l'@mail de l'utilisateur connecté dans le cookie
+        $c_nom= $db->querySingle("SELECT nomclient FROM client WHERE mailclient='$c_user'");    // Récupère le nom de l'utilisateur connecté
         ?>
     <header>
         <a href="admin.php">
@@ -42,30 +42,30 @@
         <ul>
             <?php
                 echo "<div id='bienvenue'>Bienvenue, {$c_nom}</div>";
-                while ($list = $cat->fetchArray()) {
-                    echo "<h1><li>Nos {$list['categorie']}s</li></h1>";
+                while ($list = $cat->fetchArray()) {                        // Pour chaque catégorie
+                    echo "<h1><li>Nos {$list['categorie']}s</li></h1>";     // On crée un titre
                     echo "<div class=listeprod>";
-                    if ($list['categorie'] == "PABX") {
-                        while ($row = $pabx->fetchArray()) {
-                            echo "<a href='produit.php?produit={$row[refarticle]}' class='divprod'>";
-                            echo "<center><img src='assets/produits/{$row[refarticle]}.png' alt='Image non disponible' class='imgproduit'><br>";
-                            echo "<div class='prodtext'>{$row[marque]} {$row[nomarticle]}</div></center>";
+                    if ($list['categorie'] == "PABX") {                     // Catégorie "PABX"
+                        while ($row = $pabx->fetchArray()) {                // Pour chaque pabx
+                            echo "<a href='produit.php?produit={$row[refarticle]}' class='divprod'>";   // Lien vers la page du produit
+                            echo "<center><img src='assets/produits/{$row[refarticle]}.png' alt='Image non disponible' class='imgproduit'><br>";    // Image de l'article
+                            echo "<div class='prodtext'>{$row[marque]} {$row[nomarticle]}</div></center>";      // Texte de l'article
                             echo "</a>";
                         }
                     }
-                    if ($list['categorie'] == "Fixe") {
-                        while ($row = $fixe->fetchArray()) {
-                            echo "<a href='produit.php?produit={$row[refarticle]}' class='divprod'>";
-                            echo "<center><img src='assets/produits/{$row[refarticle]}.png' alt='Image non disponible' class='imgproduit'><br>";
+                    if ($list['categorie'] == "Fixe") {                     // Catégorie "Fixe"
+                        while ($row = $fixe->fetchArray()) {                // Pour chaque fixe
+                            echo "<a href='produit.php?produit={$row[refarticle]}' class='divprod'>";   // Lien vers la page du produit
+                            echo "<center><img src='assets/produits/{$row[refarticle]}.png' alt='Image non disponible' class='imgproduit'><br>";    // Image de l'article
                             echo "<div class='prodtext'>{$row[marque]} {$row[nomarticle]}</div></center>";
                             echo "</a>";
                         }
                     }
                     if ($list['categorie'] == "Mobile") {
                         while ($row = $mobi->fetchArray()) {
-                            echo "<a href='produit.php?produit={$row[refarticle]}' class='divprod'>";
-                            echo "<center><img src='assets/produits/{$row[refarticle]}.png' alt='Image non disponible' class='imgproduit'><br>";
-                            echo "<div class='prodtext'>{$row[marque]} {$row[nomarticle]}</div></center>";
+                            echo "<a href='produit.php?produit={$row[refarticle]}' class='divprod'>";   // Lien vers la page du produit
+                            echo "<center><img src='assets/produits/{$row[refarticle]}.png' alt='Image non disponible' class='imgproduit'><br>";    // Image de l'article
+                            echo "<div class='prodtext'>{$row[marque]} {$row[nomarticle]}</div></center>";      // Texte de l'article
                             echo "</a>";
                         }
                     }

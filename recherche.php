@@ -12,9 +12,11 @@
 </head>
 <body>
     <?php
-        $motcle = $_GET['motcle'];
+        $motcle = $_GET['motcle'];  // On récupère le(s) mot(s) clé(s) de recherche par GET
         $db = new SQLite3('amazon2.db');
+        // On cherche une ligne de la base de données qui contient le mot-clé recherché:
         $rech = $db->query("SELECT * FROM article WHERE nomarticle LIKE '%$motcle%' or marque LIKE '%$motcle%' or categorie LIKE '%$motcle%' or refarticle LIKE '%$motcle%'");
+        // On compte le nombre de résultats
         $nbrrech = $db->querySingle("SELECT count(*) FROM article WHERE nomarticle LIKE '%$motcle%' or marque LIKE '%$motcle%' or categorie LIKE '%$motcle%' or refarticle LIKE '%$motcle%'");
         ?>
     <header>
@@ -36,12 +38,12 @@
     </header>
     <div class="main">
             <?php
-            echo "<h1>{$nbrrech} résultats pour la recherche \"{$motcle}\" :</h1>";
+            echo "<h1>{$nbrrech} résultats pour la recherche \"{$motcle}\" :</h1>"; // Affichage du nombre de résultats trouvés
             echo "<div class=listeprod>";
             while ($row = $rech->fetchArray()) {
-                echo "<a href='produit.php?produit={$row[refarticle]}' class='divprod'>";
-                echo "<center><img src='assets/produits/{$row[refarticle]}.png' alt='Image non disponible' class='imgproduit'><br>";
-                echo "<div class='prodtext'>{$row[marque]} {$row[nomarticle]}</div></center>";
+                echo "<a href='produit.php?produit={$row[refarticle]}' class='divprod'>";   // Lien vers la page du produit
+                echo "<center><img src='assets/produits/{$row[refarticle]}.png' alt='Image non disponible' class='imgproduit'><br>";    // Image
+                echo "<div class='prodtext'>{$row[marque]} {$row[nomarticle]}</div></center>";  // Nom
                 echo "</a>";
             }
             echo "</div>";
