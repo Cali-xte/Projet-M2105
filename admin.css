@@ -118,7 +118,7 @@ td {
     border-width: 1px
 }
 
-#clean {
+.clean {
     background-color: red;
     color: lightgray;
 }
